@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://www.openai.com/">
-    <img src="https://img.shields.io/badge/OpenAI-GPT--4-1f6feb?logo=openai&logoColor=white" alt="OpenAI">
+    <img src="https://img.shields.io/badge/OpenAI-GPT--3.5-1f6feb?logo=openai&logoColor=white" alt="OpenAI">
   </a>
   <a href="https://docu-mate.streamlit.app/">
     <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit">
