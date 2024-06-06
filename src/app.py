@@ -28,7 +28,7 @@ def main():
     else:
         st.image('logo/DocuMate-light.png')
     
-    st.write("""> DocuMate is a Retrieval-Augmented Genseration (RAG) chatbot built on top of ChatGPT that is designed to assist you by answering 
+    st.write("""> DocuMate is a Retrieval-augmented Generation (RAG) chatbot built on top of ChatGPT that is designed to assist you by answering 
              your questions based on the contents of the files you provide. Simply upload a document, and DocuMate will read and understand its contents, 
              allowing you to ask questions and receive well-informed responses.""")
 
