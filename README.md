@@ -1,11 +1,18 @@
 <h1 align='center'>📂 DocuMate</h1>
 
- **A Retrieval-Augmented Generation (RAG) Chatbot built on top of ChatGPT.**  
- Just upload your document and ask DocuMate anything about it.
+ **A Retrieval-Augmented Generation (RAG) Chatbot built on top of ChatGPT.** 
+ This application allows users to upload their own documents and ask the chatbot about anything regarding its contents. 
+ To use the application, ensure that you have an OpenAI API key. You can get one through the [OpenAI website](https://platform.openai.com/api-keys).
 
-# How to use
-1. Log-in to your account. If you do not have one, register an account.
-2. Enter your OpenAI API Key in the sidebar. You can get one at https://platform.openai.com/api-keys.
-3. Upload your document.
+# Contributions 
+Contributions are most welcome to help improve and expand the project. You can do this by 
 
- Try out the demo [here](https://docu-mate.streamlit.app/).
+- filling any issues that you may find,
+- submitting pull requests, or
+- providing general feedback.
+
+# Accessing the Application
+This application can be accessed on the Streamlit Cloud at [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://docu-mate.streamlit.app/)
+
+# License
+Docu-Mate is released under the MIT License, a permissive free software license that allows for significant freedom in the use and distribution of the software.
