@@ -1,6 +1,5 @@
 import firebase_admin 
 import streamlit as st
-import time
 
 from streamlit_theme import st_theme
 from firebase_admin import credentials
