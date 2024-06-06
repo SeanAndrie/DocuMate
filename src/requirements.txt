@@ -9,3 +9,4 @@ python_docx==1.1.2
 Requests==2.32.3
 st_theme==1.2.3
 streamlit==1.35.0
+faiss-cpu==1.8.0
