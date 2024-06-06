@@ -23,8 +23,11 @@
 ## User-Workflow
 <img width="3210" alt="FlowChart and Low-Fidelity" src="https://github.com/SeanAndrie/DocuMate/assets/84764648/67cdedd1-0d9f-4d17-a8e7-fa0d562ff1ea">
 
+
+### What session data is being saved to the database?
+
 > **Note**: Generally, users will have to log-in to an account to use the application. This is so they are able to save their sessions and refer back to it if they so choose. 
-Sessions can only stay active until 20 days, otherwise they are deleted from storage. But, users do have the freedom to delete these sessions manually.
+Sessions can only stay active until 20 days, otherwise they are deleted from storage. Rest assured, users do have the freedom to delete these sessions manually.
 
 ## Contributions 
 **Contributions are most welcome** to help improve and expand the project. You can do this by 
