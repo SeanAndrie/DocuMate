@@ -24,7 +24,7 @@
 <img width="3210" alt="FlowChart and Low-Fidelity" src="https://github.com/SeanAndrie/DocuMate/assets/84764648/67cdedd1-0d9f-4d17-a8e7-fa0d562ff1ea">
 
 ## Contributions 
-Contributions are most welcome to help improve and expand the project. You can do this by 
+**Contributions are most welcome** to help improve and expand the project. You can do this by 
 
 - filling any issues that you may find,
 - submitting pull requests, or
