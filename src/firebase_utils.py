@@ -106,7 +106,8 @@ class ProjectUtilities:
         threshold_time = current_time - timedelta(days=30)
 
         for session_name, session_data in sessions_data.items():
-            session_timestamp = datetime.fromisoformat(session_data['timestamp']['timestamp']['timestamp']) # What the hell 😭
+            session_data_str = session_data['timestamp']['timestamp'] # What the hell 😭
+            session_timestamp = datetime.fromisoformat(session_data_str['timestamp'])
             if session_timestamp < threshold_time:
                 self.delete_session(session_name)
                 print(f"Deleted session '{session_name}' due to exceeding 30 days.")
