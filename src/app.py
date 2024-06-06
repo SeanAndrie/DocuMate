@@ -1,5 +1,6 @@
 import firebase_admin 
 import streamlit as st
+import time
 
 from streamlit_theme import st_theme
 from firebase_admin import credentials
@@ -23,8 +24,11 @@ def main():
     SessionState().initialize()
 
     theme = st_theme()
-
-    st.image(f"logo/DocuMate-{theme['base']}.png")
+    if theme['base'] == 'dark':
+        st.image('logo/DocuMate-dark.png')
+    else:
+        st.image('logo/DocuMate-light.png')
+    
     st.write("""> DocuMate is a Retrieval-Augmented Genseration (RAG) chatbot built on top of ChatGPT that is designed to assist you by answering 
              your questions based on the contents of the files you provide. Simply upload a document, and DocuMate will read and understand its contents, 
              allowing you to ask questions and receive well-informed responses.""")
