@@ -1,6 +1,6 @@
-
-![DocuMate-Dark-removebg-preview](https://github.com/SeanAndrie/DocuMate/assets/84764648/bbd1d9d0-0703-49fd-a879-e4d473eb9d59)
-
+<div align="center">
+  <img src="https://github.com/SeanAndrie/DocuMate/assets/84764648/bbd1d9d0-0703-49fd-a879-e4d473eb9d59"> 
+</div>
 <div align="center">
   <a href="https://docu-mate.streamlit.app/">
     <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit">
