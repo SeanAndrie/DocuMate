@@ -1,6 +1,6 @@
-<div align='center'>
+
    ![DocuMate-Light](https://github.com/SeanAndrie/DocuMate/assets/84764648/ddfe4df7-1a3a-4f5a-8595-76012bb4b5c9)
-</div>
+
 
 <div align="center">
   <a href="https://docu-mate.streamlit.app/">
