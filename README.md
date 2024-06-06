@@ -34,7 +34,7 @@
 - providing general feedback.
 
 ## Accessing the Application
-This application can be accessed on the Streamlit Cloud at [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://docu-mate.streamlit.app/)
+This application can be accessed on the Streamlit Cloud. [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://docu-mate.streamlit.app/)
 
 ## License
 Docu-Mate is released under the [MIT License](https://github.com/SeanAndrie/DocuMate/blob/main/LICENSE), a permissive free software license that allows for significant freedom in the use and distribution of the software.
