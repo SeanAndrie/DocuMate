@@ -7,4 +7,5 @@ openai==1.31.1
 PyPDF2==3.0.1
 python_docx==1.1.2
 Requests==2.32.3
+st_theme==1.2.3
 streamlit==1.35.0
