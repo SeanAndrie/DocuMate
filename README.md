@@ -20,6 +20,9 @@
  This application allows users to upload their own documents and ask the chatbot about anything regarding its contents. 
  To use the application, ensure that you have an OpenAI API key. You can get one through the [OpenAI website](https://platform.openai.com/api-keys).
 
+## User-Workflow
+<img width="3210" alt="FlowChart and Low-Fidelity" src="https://github.com/SeanAndrie/DocuMate/assets/84764648/67cdedd1-0d9f-4d17-a8e7-fa0d562ff1ea">
+
 ## Contributions 
 Contributions are most welcome to help improve and expand the project. You can do this by 
 
