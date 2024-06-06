@@ -101,7 +101,7 @@ class ProjectUtilities:
     def delete_old_sessions(self):
         sessions_data = self.get_sessions_data()
         current_time = datetime.utcnow()
-        threshold_time = current_time - timedelta(days=20)
+        threshold_time = current_time - timedelta(days=15)
 
         for session_name, session_data in sessions_data.items():
             session_timestamp = datetime.fromisoformat(session_data['timestamp'])
