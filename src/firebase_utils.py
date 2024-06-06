@@ -104,7 +104,14 @@ class ProjectUtilities:
         threshold_time = current_time - timedelta(days=15)
 
         for session_name, session_data in sessions_data.items():
-            session_timestamp = datetime.fromisoformat(session_data['timestamp'])
-            if session_timestamp < threshold_time:
-                self.delete_session(session_name)
-                print(f"Deleted session '{session_name}' due to exceeding 30 days.")
+            session_timestamp = session_data.get('timestamp')
+            if session_timestamp:
+                try:
+                    session_timestamp = datetime.fromisoformat(session_timestamp)
+                    if session_timestamp < threshold_time:
+                        self.delete_session(session_name)
+                        print(f"Deleted session '{session_name}' due to exceeding 30 days.")
+                except ValueError as e:
+                    print(f"Error parsing timestamp for session '{session_name}': {e}")
+            else:
+                print(f"Session '{session_name}' has no timestamp, skipping.")
