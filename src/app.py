@@ -17,7 +17,7 @@ def initialize_app(creds_path, options = None):
     print('Firebase application initialized successfully.')
 
 def main():
-    initialize_app(st.secrets['FIREBASE_CREDS_PATH'], 
+    initialize_app(st.secrets['FIREBASE']['CREDENTIALS'], 
                    options = {'storageBucket':st.secrets['FIREBASE_STORAGE']})
     SessionState().initialize()
 
