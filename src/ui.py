@@ -308,9 +308,9 @@ class MainInterface(BaseInterface):
             log_out = st.button('Log Out', use_container_width=True)
 
             with cols[0]:
-                add_new = st.button('➕ New Session', use_container_width=True)
+                add_new = st.button('New Session', use_container_width=True)
             with cols[1]:
-                save_all = st.button('💾 Save All', use_container_width=True)
+                save_all = st.button('Save All', use_container_width=True)
 
             if log_out:
                 st.session_state['user'] = None
