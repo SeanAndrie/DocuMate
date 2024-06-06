@@ -21,7 +21,7 @@ class ProjectUtilities:
                 'logs': self._get_file_data(session_name, '_logs.json', json.load),
                 'context_file': self._get_file_data(session_name, '_context.pkl', pickle.load),
                 'history': self._get_file_data(session_name, '_history.pkl', pickle.load),
-                'timestamp': self._get_file_data(session_name, '_timestamp.json', json.load)
+                'timestamp': self._get_file_data(session_name, '_timestamp.json', json.load)['timestamp']
             }
             for session_name in self.sessions_list
         }
@@ -60,8 +60,6 @@ class ProjectUtilities:
         path = f'{self.project_name}/chat_history/{session_name}'
         session_logs, session_context_file, session_history, session_timestamp = session_dict.values()
 
-        print(session_timestamp)
-
         self._upload_file(f'{path}/{session_name}_logs.json', json.dumps(session_logs), 'application/json')
         self._upload_file(f'{path}/{session_name}_context.pkl', pickle.dumps(session_context_file), 'application/octet_stream')
         self._upload_file(f'{path}/{session_name}_history.pkl', pickle.dumps(session_history), 'application/octet-stream')
@@ -98,7 +96,7 @@ class ProjectUtilities:
 
             print(f"Session '{session_name}' renamed to 'Session {idx}' in Firebase Storage.")
 
-        self.sessions_list = self._get_session_list()
+        self.sessions_list = self._list_sessions()
         
     def delete_old_sessions(self):
         sessions_data = self.get_sessions_data()
@@ -106,8 +104,7 @@ class ProjectUtilities:
         threshold_time = current_time - timedelta(days=30)
 
         for session_name, session_data in sessions_data.items():
-            session_data_str = session_data['timestamp']['timestamp'] # What the hell 😭
-            session_timestamp = datetime.fromisoformat(session_data_str['timestamp'])
+            session_timestamp = datetime.fromisoformat(session_data['timestamp'])
             if session_timestamp < threshold_time:
                 self.delete_session(session_name)
                 print(f"Deleted session '{session_name}' due to exceeding 30 days.")
