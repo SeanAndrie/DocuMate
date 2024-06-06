@@ -11,13 +11,13 @@ def run_periodic_cleanup():
         project_utilities.delete_old_sessions()
 
 @st.cache_resource
-def initialize_app(creds_path, options = None):
-    creds = credentials.Certificate(creds_path)
+def initialize_app(creds, options = None):
+    creds = credentials.Certificate(creds)
     firebase_admin.initialize_app(creds, options)
     print('Firebase application initialized successfully.')
 
 def main():
-    initialize_app(st.secrets['FIREBASE']['CREDENTIALS'], 
+    initialize_app(creds = dict(st.secrets['FIREBASE_CREDENTIALS']), 
                    options = {'storageBucket':st.secrets['FIREBASE_STORAGE']})
     SessionState().initialize()
 
