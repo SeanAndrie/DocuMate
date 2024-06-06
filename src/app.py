@@ -1,6 +1,5 @@
 import firebase_admin 
 import streamlit as st
-import threading as Thread
 
 from firebase_admin import credentials
 from firebase_utils import ProjectUtilities
