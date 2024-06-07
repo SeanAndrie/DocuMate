@@ -16,7 +16,9 @@
   </a>
 </div>
 
-## Description
+<br>
+<br>
+
  **A Retrieval-Augmented Generation (RAG) Chatbot built on top of ChatGPT.** 
  This application allows users to upload their own documents and ask the chatbot about anything regarding its contents. 
  To use the application, ensure that you have an OpenAI API key. You can get one through the [OpenAI website](https://platform.openai.com/api-keys).
