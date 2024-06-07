@@ -121,6 +121,13 @@ class BaseInterface:
         self._upload_container = st.container(border=borders)
         self._message_container = st.container(border=borders)
         self._prompt_container = st.container(border=borders)
+
+    def rename_sessions(self):
+        renamed_chats = {}
+        for idx, (session_name, session_data) in enumerate(st.session_state['chats'].items(), start=1):
+            renamed_chats[f'Session {idx}'] = session_data
+        st.session_state['chats'] = renamed_chats
+        self.renamed_chats = renamed_chats
     
     def is_valid_api_key(self):
         if self.openai_api_key:
@@ -135,6 +142,16 @@ class BaseInterface:
             except Exception as e:
                 st.error(f'Error occurred while validating API key: {str(e)}')
 
+    def render_messages(self):
+        with self._message_container:
+            for message in st.session_state['chats'][f'Session {self.idx}']['logs']:
+                chat_box = st.chat_message(message['role'])
+                chat_box.markdown(message['content'])
+                
+class ChatInterface(BaseInterface):
+    def __init__(self, name, idx, openai_api_key, temperature, chunk_size, chunk_overlap):
+        super().__init__(name, idx, openai_api_key, temperature, chunk_size, chunk_overlap)
+    
     def upload_document(self):
         session_context_file = st.session_state['chats'][f'Session {self.idx}']['context_file']
         with self._upload_container:
@@ -145,22 +162,6 @@ class BaseInterface:
                 document = session_context_file
         return document
 
-    def render_messages(self):
-        with self._message_container:
-            for message in st.session_state['chats'][f'Session {self.idx}']['logs']:
-                chat_box = st.chat_message(message['role'])
-                chat_box.markdown(message['content'])
-
-    def stream_response(self, response, delay=0.02):
-        for chunk in response:
-            if answer_chunk := chunk.get('answer'):
-                yield f'{answer_chunk}'
-                time.sleep(delay)
-
-class ChatInterface(BaseInterface):
-    def __init__(self, name, idx, openai_api_key, temperature, chunk_size, chunk_overlap):
-        super().__init__(name, idx, openai_api_key, temperature, chunk_size, chunk_overlap)
-    
     def download_session_log(self):
         session_name = self.name
         session_logs = st.session_state['chats'][session_name]['logs']
@@ -190,13 +191,6 @@ class ChatInterface(BaseInterface):
             st.session_state['project'].rename_sessions()
             self.rename_sessions()
             st.rerun()
-
-    def rename_sessions(self):
-        renamed_chats = {}
-        for idx, (session_name, session_data) in enumerate(st.session_state['chats'].items(), start=1):
-            renamed_chats[f'Session {idx}'] = session_data
-        st.session_state['chats'] = renamed_chats
-        self.renamed_chats = renamed_chats
 
     def delete_and_save_buttons(self):
         col1, col2 = st.columns(2)
