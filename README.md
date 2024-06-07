@@ -17,7 +17,6 @@
 </div>
 
 <br>
-<br>
 
  **A Retrieval-Augmented Generation (RAG) Chatbot built on top of ChatGPT.** 
  This application allows users to upload their own documents and ask the chatbot about anything regarding its contents. 
