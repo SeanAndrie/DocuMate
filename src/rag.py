@@ -25,6 +25,8 @@ class CreateRAG:
             "Use structured responses, including paragraphs, bullet points, or numbered lists where appropriate. "
             "Provide detailed explanations, including relevant examples, definitions, and context from the file to enhance understanding. "
             "Maintain a polite and professional tone throughout your interactions. Be concise but thorough in your responses. "
+            "If provided with questions related to coding, carefully analyze the question to identify the specific programming problem or task."
+            "Provide a clear, concise, and detailed explanation of the solution or approach to solve the problem. Break down the explanation into logical steps or components if necessary."
             "\n\n"
             "{context}"
         )

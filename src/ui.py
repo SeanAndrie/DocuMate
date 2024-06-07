@@ -269,7 +269,7 @@ class ChatInterface(BaseInterface):
                 else:
                     st.error('Invalid API key. Please provide a valid OpenAI API key.')
             else:
-                st.warning('Please provide your OpenAI API key.')
+                st.warning('Please provide an OpenAI API key.')
         else:
             st.warning('Please upload a file to proceed.')
         st.session_state['chats'][f'Session {self.idx}']
