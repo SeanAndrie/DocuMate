@@ -6,7 +6,7 @@
     <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit">
   </a>
   <a href="https://www.openai.com/">
-    <img src="https://img.shields.io/badge/OpenAI-GPT--3.5-1f6feb?logo=openai&logoColor=white" alt="OpenAI">
+    <img src="https://img.shields.io/badge/OpenAI-GPT--3.5/GPT--4o-1f6feb?logo=openai&logoColor=white" alt="OpenAI">
   </a>
   <a href="https://www.langchain.com/">
     <img src="https://img.shields.io/badge/Langchain-Framework-34a853?logo=langchain&logoColor=white" alt="Langchain">
