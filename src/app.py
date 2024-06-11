@@ -14,13 +14,6 @@ icons = {
                     </button>
                 </a>
                 """,
-    'kaggle' : """
-                <a href="https://www.kaggle.com/seanandrie" target="_blank">
-                    <button type="button" class="icon-button">
-                        <i class="fa-brands fa-kaggle"></i>
-                    </button>
-                </a>
-               """,
     'email' : """
                 <a href="mailto:seanandriegadingan@gmail.com" target="_blank">
                     <button type="button" class="icon-button">
