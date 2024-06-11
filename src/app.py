@@ -18,6 +18,7 @@ def initialize_app(creds, options = None):
     print('Firebase application initialized successfully.')
 
 def main():
+    st.set_page_config(**dict(st.secrets['PAGE_CONFIG']))
     initialize_app(creds = dict(st.secrets['FIREBASE_CREDENTIALS']), 
                    options = {'storageBucket':st.secrets['FIREBASE_STORAGE']})
     SessionState().initialize()
