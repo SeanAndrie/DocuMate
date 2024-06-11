@@ -1,5 +1,5 @@
 <style>
-  a{
+  a {
     text-decoration:none;
   }
 </style>
