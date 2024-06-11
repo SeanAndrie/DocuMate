@@ -22,7 +22,7 @@
  To use the application, ensure that you have an OpenAI API key. You can get one through the [OpenAI website](https://platform.openai.com/api-keys).
 
 ## Accessing the Application
-This application can be accessed on the Streamlit Cloud. [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://docu-mate.streamlit.app/)
+This application can be accessed on Streamlit Cloud. [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://docu-mate.streamlit.app/)
 
 ## Contributions 
 **Contributions are most welcome** to help improve and expand the project. You can do this by 
