@@ -1,3 +1,9 @@
+<style>
+  a{
+    text-decoration:none;
+  }
+</style>
+
 <div align="center">
   <h1>📂 DocuMate </h1>
 </div>
@@ -15,7 +21,6 @@
     <img src="https://img.shields.io/badge/Firebase-007ACC?logo=firebase&logoColor=white" alt="Firebase">
   </a>
 </div>
-
 <br>
 
  **A Retrieval-Augmented Generation (RAG) Chatbot built on top of ChatGPT.** 
