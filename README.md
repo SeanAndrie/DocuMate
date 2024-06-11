@@ -1,14 +1,8 @@
-<style>
-  a {
-    text-decoration:none;
-  }
-</style>
-
 <div align="center">
   <h1>📂 DocuMate </h1>
 </div>
 <div align="center">
-  <a href="https://docu-mate.streamlit.app/">
+  <a href="https://docu-mate.streamlit.app/" style={text-decoration:none}>
     <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit">
   </a>
   <a href="https://www.openai.com/">
