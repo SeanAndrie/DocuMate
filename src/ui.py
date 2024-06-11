@@ -341,9 +341,9 @@ class SessionState:
     def initialize():
         if 'user' not in st.session_state:
             st.session_state['user'] = None
-        if'user_id' not in st.session_state:
+        if 'user_id' not in st.session_state:
             st.session_state['user_id'] = None
-        if'chats' not in st.session_state:
+        if 'chats' not in st.session_state:
             st.session_state['chats'] = {
                 'Session 1':{
                     'logs':[], 
@@ -352,8 +352,10 @@ class SessionState:
                     'timestamp':datetime.utcnow().isoformat()
                 }
             }
-        if'project' not in st.session_state:
+        if 'project' not in st.session_state:
             st.session_state['project'] = None
+        if 'icon-config' not in st.session_state:
+            st.session_state['icon-config'] = {}
     
     @staticmethod
     def reset():
