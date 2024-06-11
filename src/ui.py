@@ -275,11 +275,6 @@ class MainInterface(BaseInterface):
         self.chunk_overlap = chunk_overlap
         self.temperature = temperature
 
-    # def cleanup_old_sessions(self):
-    #     project_utilities = ProjectUtilities(f"{st.session_state['user_id']}_Project")
-    #     project_utilities.delete_old_sessions()
-    #     st.success('Old sessions cleaned up successfully.')
-
     def save_all_sessions(self):
         for session_name, session_data in st.session_state['chats'].items():
             st.session_state['project'].save_session(session_name=session_name, 
@@ -319,7 +314,7 @@ class MainInterface(BaseInterface):
             st.divider()
             self.openai_api_key = st.text_input('OpenAI API Key', type='password')
             with st.expander('**Advanced Settings**'):
-                self.models = st.selectbox('Select a Model', ['gpt-3.5-turbo', 'gpt-4o'])
+                self.models = st.selectbox('Select a Model', ['gpt-3.5-turbo', 'gpt-4o', 'gpt-4'])
                 self.temperature = st.slider('Temperature', 0.0, 1.0, value=0.5)
                 self.chunk_size = st.slider('Chunk Size', 100, 2500, value=1000)
                 self.chunk_overlap = st.slider('Chunk Overlap', 10, 250, value=50)
