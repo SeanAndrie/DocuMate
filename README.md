@@ -1,3 +1,5 @@
+
+![DocuMate-dark](https://githubas.com/SeanAndrie/DocuMate/assets/84764648/44acd068-e223-4bb1-b889-eb64652edf38)
 <div align="center">
   <h1>📂 DocuMate </h1>
 </div>
