@@ -110,9 +110,10 @@ class UserAuthenticationComponent:
                         self.register()      
 
 class BaseInterface:
-    def __init__(self, name, idx, openai_api_key, temperature, chunk_size, chunk_overlap, borders=True):
+    def __init__(self, name, idx, openai_api_key, model, temperature, chunk_size, chunk_overlap, borders=True):
         self.name = name
         self.idx = idx
+        self.model = model
         self.openai_api_key = openai_api_key
         self.temperature = temperature
         self.chunk_size = chunk_size
@@ -149,8 +150,8 @@ class BaseInterface:
                 chat_box.markdown(message['content'])
                 
 class ChatInterface(BaseInterface):
-    def __init__(self, name, idx, openai_api_key, temperature, chunk_size, chunk_overlap):
-        super().__init__(name, idx, openai_api_key, temperature, chunk_size, chunk_overlap)
+    def __init__(self, name, idx, openai_api_key, model, temperature, chunk_size, chunk_overlap):
+        super().__init__(name, idx, openai_api_key, model, temperature, chunk_size, chunk_overlap)
     
     def upload_document(self):
         session_context_file = st.session_state['chats'][f'Session {self.idx}']['context_file']
@@ -233,7 +234,7 @@ class ChatInterface(BaseInterface):
                 if history:
                     rag.store[f'Session {self.idx}'] = history
 
-                conversational_rag_chain = rag.assemble_rag_chain(temperature=self.temperature, chunk_size=self.chunk_size, chunk_overlap=self.chunk_overlap)
+                conversational_rag_chain = rag.assemble_rag_chain(model=self.model, temperature=self.temperature, chunk_size=self.chunk_size, chunk_overlap=self.chunk_overlap)
                 response = conversational_rag_chain.stream({'input': prompt}, config={'configurable': {'session_id': f'Session {self.idx}'}})
 
                 with self._message_container.chat_message('assistant'):
@@ -269,11 +270,12 @@ class ChatInterface(BaseInterface):
         st.session_state['chats'][f'Session {self.idx}']
 
 class MainInterface(BaseInterface):
-    def __init__(self, openai_api_key=None, chunk_size=None, chunk_overlap=None, temperature=None):
-        self.openai_api_key = openai_api_key
-        self.chunk_size = chunk_size
-        self.chunk_overlap = chunk_overlap
-        self.temperature = temperature
+    def __init__(self):
+        self.openai_api_key = None
+        self.chunk_size = None
+        self.chunk_overlap = None
+        self.temperature = None
+        self.model = None
 
     def save_all_sessions(self):
         for session_name, session_data in st.session_state['chats'].items():
@@ -314,7 +316,7 @@ class MainInterface(BaseInterface):
             st.divider()
             self.openai_api_key = st.text_input('OpenAI API Key', type='password')
             with st.expander('**Advanced Settings**'):
-                self.models = st.selectbox('Select a Model', ['gpt-3.5-turbo', 'gpt-4o', 'gpt-4'])
+                self.model = st.selectbox('Select a Model', ['gpt-3.5-turbo', 'gpt-4o', 'gpt-4'])
                 self.temperature = st.slider('Temperature', 0.0, 1.0, value=0.5)
                 self.chunk_size = st.slider('Chunk Size', 100, 2500, value=1000)
                 self.chunk_overlap = st.slider('Chunk Overlap', 10, 250, value=50)
@@ -326,7 +328,7 @@ class MainInterface(BaseInterface):
         tabs = st.tabs(chat_session_names)
         for idx, tab in enumerate(tabs):
             with tab:
-                ChatInterface(name=f'{chat_session_names[idx]}', idx=idx + 1, openai_api_key=self.openai_api_key, 
+                ChatInterface(name=f'{chat_session_names[idx]}', idx=idx + 1, openai_api_key=self.openai_api_key, model=self.model,
                               temperature=self.temperature, chunk_size=self.chunk_size, chunk_overlap=self.chunk_overlap).render()             
 
 class AccountInfoComponent:

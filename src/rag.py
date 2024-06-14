@@ -94,13 +94,13 @@ class CreateRAG:
     def create_embeddings(self):
         return OpenAIEmbeddings(openai_api_key=self.openai_api_key)
     
-    def get_model(self, temperature):
-        return ChatOpenAI(temperature=temperature, api_key=self.openai_api_key)
+    def get_model(self, model, temperature):
+        return ChatOpenAI(model=model, temperature=temperature, api_key=self.openai_api_key)
     
-    def assemble_rag_chain(self, temperature, chunk_size, chunk_overlap):
+    def assemble_rag_chain(self, model, temperature, chunk_size, chunk_overlap):
         embeddings = self.create_embeddings()
         retriever = self.get_retriever(embeddings, chunk_size = chunk_size, chunk_overlap = chunk_overlap)
-        model = self.get_model(temperature=temperature)
+        llm = self.get_model(model=model, temperature=temperature)
         
         contextualize_q_prompt = ChatPromptTemplate.from_messages(
             [
@@ -111,7 +111,7 @@ class CreateRAG:
         )
 
         history_aware_retriever = create_history_aware_retriever(
-            model, retriever, contextualize_q_prompt
+            llm, retriever, contextualize_q_prompt
         )
 
         qa_prompt = ChatPromptTemplate.from_messages(
@@ -122,7 +122,7 @@ class CreateRAG:
             ]
         )
 
-        qa_chain = create_stuff_documents_chain(model, qa_prompt)
+        qa_chain = create_stuff_documents_chain(llm, qa_prompt)
         rag_chain = create_retrieval_chain(history_aware_retriever, qa_chain)
         
         conversational_rag_chain = RunnableWithMessageHistory(
