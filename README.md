@@ -1,6 +1,12 @@
 <div align="center">
   <h1>📂 DocuMate </h1>
 </div>
+
+Authorization Page            |  Main Page
+:-------------------------:|:-------------------------:
+ ![Screenshot 2024-06-15 083254](https://github.com/SeanAndrie/DocuMate/assets/84764648/f4b712d2-c3b8-4379-b4bd-03df6ed0928f) | ![Screenshot 2024-06-15 083705](https://github.com/SeanAndrie/DocuMate/assets/84764648/4aeb1b84-237c-45a3-b95e-75c8149117c3)
+
+
 <div align="center">
   <a href="https://docu-mate.streamlit.app/">
     <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit">
