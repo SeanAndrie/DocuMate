@@ -27,6 +27,10 @@ Authorization Page            |  Main Page
  This application allows users to upload their own documents and ask the chatbot about anything regarding its contents. 
  To use the application, ensure that you have an OpenAI API key. You can get one through the [OpenAI website](https://platform.openai.com/api-keys).
 
+The application does require you to create an account for you to access it. 
+
+This is because the application allows users to save individual chat sessions. Hence, if you were to log back into your account, the previous chat logs and context from your saved session will be loaded back into the application.
+
 ## Accessing the Application
 This application can be accessed on Streamlit Cloud. [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://docu-mate.streamlit.app/)
 
