@@ -27,6 +27,7 @@ def run_periodic_cleanup():
     if 'user_id' in st.session_state and st.session_state['user_id']:
         project_utilities = ProjectUtilities(f"{st.session_state['user_id']}_Project")
         project_utilities.delete_old_sessions()
+        project_utilities.rename_sessions()
 
 @st.cache_resource
 def initialize_app(creds, options = None):

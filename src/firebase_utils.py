@@ -3,7 +3,6 @@ import pickle
 import tempfile
 from datetime import datetime, timedelta
 from firebase_admin import storage
-
 class ProjectUtilities:
     def __init__(self, project_name):
         self.project_name = project_name
@@ -101,7 +100,7 @@ class ProjectUtilities:
     def delete_old_sessions(self):
         sessions_data = self.get_sessions_data()
         current_time = datetime.utcnow()
-        threshold_time = current_time - timedelta(days=15)
+        threshold_time = current_time - timedelta(days=30)
 
         for session_name, session_data in sessions_data.items():
             session_timestamp = session_data.get('timestamp')
